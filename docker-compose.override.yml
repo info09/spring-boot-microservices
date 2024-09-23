@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  mongodb:
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGODB_DATABASE: product-service
+      MONGODB_ROOT_USERNAME: root
+      MONGODB_ROOT_PASSWORD: root
+    volumes:
+      - mongodb_data:/data/db
+    ports:
+      - "27017:27017"
+
+  mysqldb:
+    container_name: mysqldb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+    volumes:
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysqldb_data:/var/lib/mysql
+    ports:
+      - "3306:3306"

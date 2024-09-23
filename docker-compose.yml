@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  #database section
+  mongodb:
+    image: bitnami/mongodb:7.0.11
+
+  mysqldb:
+    image: mysql:8.3.0
+
+#network section
+networks:
+  default:
+    name: spring-boot-microservice
+    driver: bridge
+
+#volumes sections
+volumes:
+  mongodb_data:
+    name: mongodb_data
+  mysqldb_data:
+    name: mysqldb_data
