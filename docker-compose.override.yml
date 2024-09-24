@@ -27,7 +27,7 @@ services:
   keycloak-mysql:
     container_name: keycloak-mysql
     volumes:
-      - ./volume-data/mysql_keycloak_data:/var/lib/mysql
+      - mysql_keycloak_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: keycloak
@@ -48,6 +48,6 @@ services:
     ports:
       - "8181:8080"
     volumes:
-      - ./docker/keycloak/realms/:/opt/keycloak/data/import/
+      - keycloak_realms:/opt/keycloak/data/import/
     depends_on:
       - keycloak-mysql

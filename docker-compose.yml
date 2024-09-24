@@ -26,3 +26,7 @@ volumes:
     name: mongodb_data
   mysqldb_data:
     name: mysqldb_data
+  mysql_keycloak_data:
+    name: mysql_keycloak_data
+  keycloak_realms:
+    name: keycloak_realms
