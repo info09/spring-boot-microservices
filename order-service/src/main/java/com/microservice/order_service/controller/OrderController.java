@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/orders")
 @RequiredArgsConstructor
 public class OrderController {
-    private final OrderService orderService;
+  private final OrderService orderService;
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public String placeOrder(@RequestBody OrderRequest orderRequest) {
-        orderService.placeOrder(orderRequest);
-        return "Order place Successfully";
-    }
+  @PostMapping
+  @ResponseStatus(HttpStatus.CREATED)
+  public String placeOrder(@RequestBody OrderRequest orderRequest) {
+    orderService.placeOrder(orderRequest);
+    return "Order place Successfully";
+  }
 }

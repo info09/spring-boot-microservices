@@ -11,9 +11,10 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class Inventory {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
-    private String skuCode;
-    private Integer quantity;
+  @Id
+  @GeneratedValue(strategy = GenerationType.UUID)
+  private String id;
+
+  private String skuCode;
+  private Integer quantity;
 }
