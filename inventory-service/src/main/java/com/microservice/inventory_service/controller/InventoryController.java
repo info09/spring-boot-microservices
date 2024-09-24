@@ -1,5 +1,7 @@
 package com.microservice.inventory_service.controller;
 
+import com.microservice.inventory_service.dto.InventoryRequest;
+import com.microservice.inventory_service.dto.InventoryResponse;
 import com.microservice.inventory_service.service.InventoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,5 +17,11 @@ public class InventoryController {
     @ResponseStatus(HttpStatus.OK)
     public boolean isInStock(@RequestParam String skuCode, @RequestParam Integer quantity) {
         return inventoryService.isInStock(skuCode, quantity);
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.OK)
+    public InventoryResponse importInventory(@RequestBody InventoryRequest request) {
+        return inventoryService.importInventory(request);
     }
 }
